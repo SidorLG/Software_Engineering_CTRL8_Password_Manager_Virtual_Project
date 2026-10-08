@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>SecurePass</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<main>
+
+    <!-- =========================
+         Login
+         ========================= -->
+
+    <section
+        id="loginView"
+        class="center"
+    >
+        <div class="card login">
+
+            <div
+                class="logo"
+                aria-hidden="true"
+            >
+                🔒
+            </div>
+
+            <h1>SecurePass</h1>
+
+            <p>
+                Your passwords. Your privacy.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="master">
+                    Master Password
+                </label>
+
+                <div class="pw">
+
+                    <input
+                        id="master"
+                        type="password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showMaster"
+                        aria-label="Show or hide master password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <button
+                    class="primary wide"
+                    id="loginBtn"
+                    type="submit"
+                >
+                    Login
+                </button>
+
+                <p
+                    id="loginMsg"
+                    class="msg"
+                    role="alert"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         Vault
+         ========================= -->
+
+    <section
+        id="vaultView"
+        hidden
+    >
+
+        <aside>
+
+            <h2>🔒 SecurePass</h2>
+
+            <button
+                class="nav active"
+                type="button"
+            >
+                My Credentials
+            </button>
+
+            <button
+                class="nav"
+                id="addSide"
+                type="button"
+            >
+                ＋ Add Credential
+            </button>
+
+            <button
+                class="nav"
+                id="logout"
+                type="button"
+            >
+                ↪ Logout
+            </button>
+
+        </aside>
+
+
+        <section class="content">
+
+            <header>
+
+                <div>
+
+                    <h1>My Credentials</h1>
+
+                    <p>
+                        Manage your encrypted login records.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary"
+                    id="addBtn"
+                    type="button"
+                >
+                    ＋ Add Credential
+                </button>
+
+            </header>
+
+
+            <input
+                id="search"
+                class="search"
+                type="search"
+                placeholder="Search credentials..."
+                aria-label="Search credentials"
+                autocomplete="off"
+            >
+
+
+            <div class="tableWrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Website</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rows"></tbody>
+
+                </table>
+
+            </div>
+
+            <p
+                id="empty"
+                aria-live="polite"
+            >
+                No credentials saved yet.
+            </p>
+
+        </section>
+
+    </section>
+
+
+    <!-- =========================
+         Add / Edit Modal
+         ========================= -->
+
+    <div
+        id="modal"
+        class="modal"
+        hidden
+    >
+
+        <div
+            class="dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="formTitle"
+        >
+
+            <h2 id="formTitle">
+                Add Credential
+            </h2>
+
+            <form id="credForm">
+
+                <input
+                    type="hidden"
+                    id="editId"
+                >
+
+
+                <label for="website">
+                    Website / URL
+                </label>
+
+                <input
+                    id="website"
+                    type="url"
+                    required
+                    autocomplete="url"
+                    placeholder="https://example.com"
+                >
+
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    type="text"
+                    required
+                    autocomplete="username"
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    required
+                    autocomplete="current-password"
+                >
+
+
+                <p
+                    id="formMsg"
+                    class="msg"
+                    role="alert"
+                    aria-live="polite"
+                ></p>
+
+
+                <div class="actions">
+
+                    <button
+                        type="button"
+                        id="cancel"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="primary"
+                        type="submit"
+                    >
+                        Save
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>

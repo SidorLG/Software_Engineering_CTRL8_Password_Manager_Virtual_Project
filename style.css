@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    color: #172033;
+    background: #f4f7fb;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f7fb;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   Login
+   ========================= */
+
+.center {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.login {
+    width: min(420px, 100%);
+    padding: 36px;
+}
+
+.logo {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.login h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.login > p {
+    text-align: center;
+    color: #5d6b82;
+    margin: 8px 0 28px;
+}
+
+
+/* =========================
+   Forms
+   ========================= */
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #bcc8d8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #172033;
+}
+
+input::placeholder {
+    color: #68758a;
+}
+
+.pw {
+    display: flex;
+    align-items: stretch;
+}
+
+.pw input {
+    border-radius: 8px 0 0 8px;
+}
+
+.pw button {
+    width: 48px;
+    border: 1px solid #bcc8d8;
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    background: #f7f9fc;
+}
+
+.primary {
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 18px;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.primary:hover {
+    background: #1d4ed8;
+}
+
+.wide {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.msg {
+    min-height: 20px;
+    margin: 10px 0 0;
+    color: #b42318;
+}
+
+
+/* =========================
+   Vault layout
+   ========================= */
+
+#vaultView {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+aside {
+    padding: 24px 16px;
+    background: #ffffff;
+    border-right: 1px solid #dbe3ef;
+}
+
+aside h2 {
+    margin: 0 8px 28px;
+    font-size: 20px;
+}
+
+.nav {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px 0;
+    color: #172033;
+}
+
+.nav:hover,
+.nav.active {
+    background: #eaf3ff;
+}
+
+.content {
+    padding: 36px;
+    overflow: auto;
+}
+
+.content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.content header h1 {
+    margin: 0 0 4px;
+}
+
+.content header p {
+    margin: 0;
+    color: #5d6b82;
+}
+
+
+/* =========================
+   Search and table
+   ========================= */
+
+.search {
+    max-width: 420px;
+    margin: 24px 0;
+}
+
+.tableWrap {
+    background: #ffffff;
+    border: 1px solid #dbe3ef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #e5eaf1;
+}
+
+th {
+    background: #f7f9fc;
+    font-weight: 700;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.small {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.small:hover {
+    background: #eef2f7;
+}
+
+.danger {
+    color: #b42318;
+}
+
+#empty {
+    color: #5d6b82;
+}
+
+
+/* =========================
+   Modal
+   ========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.dialog {
+    width: min(470px, 95vw);
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.dialog h2 {
+    margin-top: 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.actions button {
+    padding: 11px 18px;
+    border-radius: 8px;
+    border: 1px solid #bcc8d8;
+    background: #ffffff;
+}
+
+.actions .primary {
+    border: 0;
+}
+
+
+/* =========================
+   Hidden states
+   ========================= */
+
+.modal[hidden],
+#vaultView[hidden],
+#loginView[hidden] {
+    display: none !important;
+}
+
+
+/* =========================
+   Responsive layout
+   ========================= */
+
+@media (max-width: 760px) {
+
+    #vaultView {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 1px solid #dbe3ef;
+        padding: 10px;
+    }
+
+    aside h2 {
+        display: none;
+    }
+
+    .nav {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .content header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tableWrap {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}

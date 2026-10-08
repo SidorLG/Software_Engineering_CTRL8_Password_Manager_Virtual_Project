@@ -1,0 +1,6 @@
+node_modules/
+auth.json
+user_vault.enc
+user_vault.enc.bak
+.env
+*.log
